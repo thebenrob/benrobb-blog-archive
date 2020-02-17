@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Model Driven Architecture [part 1] | Your awesome title</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Model Driven Architecture [part 1]" />
+<meta name="author" content="Ben" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Model Driven Architecture (MDA) is one of many buzzwords you&#39;ll hear in software development circles. It&#39;s actually more than one word, but nobody ever says buzzphrase, we&#39;re much more excited by buzzwords. This article is by no means meant to be a comprehensive resource, it simply represents my attempt to wrap my head around the concept. Model driven architecture is an attempt to focus information systems on business problems rather than on the technology itself. The idea is that by defining our data and our processes in a certain way, that applications can be written by computers instead of programmers. The models we are talking about here are significantly more complex than a class diagram or a sequence diagram, but at heart are really providing some of the same information. You can define the types of data your application must represent and you can define how different entities in your system should interact. Then if you define everything properly, a super special computer program can actually generate a functioning application for you. The main standards behind MDA are mostly developed by the Object Management Group (OMG) which they seem to produce at an astonishing rate (see this list if you want to be impressed). In reality, these computer generated applications are probably better used as a starting point rather than a polished final product, but a good deal of the time investment in creating a new application can be done for you. Principles There are a few principles that underpin the model driven architecture. From an IBM article on the subject: Models expressed in a well-defined notation are a cornerstone to understanding systems for enterprise-scale solutions. The building of systems can be organized around a set of models by imposing a series of transformations between models, organized into an architectural framework of layers and transformations. A formal underpinning for describing models in a set of metamodels facilitates meaningful integration and transformation among models, and is the basis for automation through tools. Acceptance and broad adoption of this model-based approach requires industry standards to provide openness to consumers, and foster competition among vendors. If that made any sense, then good on you. Here&#39;s the benrobb version. Defining your data makes it easier to understand, especially when there&#39;s lots of it. Our really cool MDA tool lets you turn your model into different types of applications in different languages. This will get even cooler if we can get lots of people to do it. Value Proposition The main value I see is that it allows you to seperate the design from the architecture, the business from the technology, or in the words of CARE Technologies (OptimalJ creator), the &quot;what&quot; from the &quot;how.&quot; Compuware (OlivaNovA creator) lays out these values: accelerate productivity—cut development time by 40 percent or more enhance maintainability—simplify maintenance and refactoring tasks, reducing time and cost increase flexibility—respond rapidly to business and technology change ensure quality—promote and enforce best practices and industry-proven code standards streamline integration—leverage and optimize existing technology investments synchronize requirements with code—trace business requirements to application code implementation We all know that technology changes faster than most business processes, and MDA provides a way to allow you to keep your business processes, but also keep up to date on your technology. Vendors OMG maintains a list of vendors of MDA products. Of the vendors on this list, I&#39;ve actually heard of a few: CARE Technologies - OlivaNOVA The Programming Machine Compuware - OptimalJ IBM - Rational TenFold - BusinessTransformation &amp; TechnologyTransfer Criticisms These are simply coming from Wikipedia, but there are a few that I think are important to mention here. Vendor Lock-in: Although the idea behind MDA is to free you from the worry of technology and code, using it does lock you into a specific vendor, because at this point in time, none of them are interoperable. Incomplete standards: some of the technical standards involved have yet to be implemented in standard way, and some have not even been defined yet. Expertise scarcity: Modellers/MDA Architects are in much scarcer supply than your average (or even above average) developer. Conclusions Well, that&#39;s all the time I&#39;ve got now since the baby needs her shower. Part 1 has really focused on what MDA is, what it does, and who is doing it, but in Part 2 we&#39;ll take a look at some of the things you might want to take a look at if you (or your organization) is looking into doing something with MDA." />
+<meta property="og:description" content="Model Driven Architecture (MDA) is one of many buzzwords you&#39;ll hear in software development circles. It&#39;s actually more than one word, but nobody ever says buzzphrase, we&#39;re much more excited by buzzwords. This article is by no means meant to be a comprehensive resource, it simply represents my attempt to wrap my head around the concept. Model driven architecture is an attempt to focus information systems on business problems rather than on the technology itself. The idea is that by defining our data and our processes in a certain way, that applications can be written by computers instead of programmers. The models we are talking about here are significantly more complex than a class diagram or a sequence diagram, but at heart are really providing some of the same information. You can define the types of data your application must represent and you can define how different entities in your system should interact. Then if you define everything properly, a super special computer program can actually generate a functioning application for you. The main standards behind MDA are mostly developed by the Object Management Group (OMG) which they seem to produce at an astonishing rate (see this list if you want to be impressed). In reality, these computer generated applications are probably better used as a starting point rather than a polished final product, but a good deal of the time investment in creating a new application can be done for you. Principles There are a few principles that underpin the model driven architecture. From an IBM article on the subject: Models expressed in a well-defined notation are a cornerstone to understanding systems for enterprise-scale solutions. The building of systems can be organized around a set of models by imposing a series of transformations between models, organized into an architectural framework of layers and transformations. A formal underpinning for describing models in a set of metamodels facilitates meaningful integration and transformation among models, and is the basis for automation through tools. Acceptance and broad adoption of this model-based approach requires industry standards to provide openness to consumers, and foster competition among vendors. If that made any sense, then good on you. Here&#39;s the benrobb version. Defining your data makes it easier to understand, especially when there&#39;s lots of it. Our really cool MDA tool lets you turn your model into different types of applications in different languages. This will get even cooler if we can get lots of people to do it. Value Proposition The main value I see is that it allows you to seperate the design from the architecture, the business from the technology, or in the words of CARE Technologies (OptimalJ creator), the &quot;what&quot; from the &quot;how.&quot; Compuware (OlivaNovA creator) lays out these values: accelerate productivity—cut development time by 40 percent or more enhance maintainability—simplify maintenance and refactoring tasks, reducing time and cost increase flexibility—respond rapidly to business and technology change ensure quality—promote and enforce best practices and industry-proven code standards streamline integration—leverage and optimize existing technology investments synchronize requirements with code—trace business requirements to application code implementation We all know that technology changes faster than most business processes, and MDA provides a way to allow you to keep your business processes, but also keep up to date on your technology. Vendors OMG maintains a list of vendors of MDA products. Of the vendors on this list, I&#39;ve actually heard of a few: CARE Technologies - OlivaNOVA The Programming Machine Compuware - OptimalJ IBM - Rational TenFold - BusinessTransformation &amp; TechnologyTransfer Criticisms These are simply coming from Wikipedia, but there are a few that I think are important to mention here. Vendor Lock-in: Although the idea behind MDA is to free you from the worry of technology and code, using it does lock you into a specific vendor, because at this point in time, none of them are interoperable. Incomplete standards: some of the technical standards involved have yet to be implemented in standard way, and some have not even been defined yet. Expertise scarcity: Modellers/MDA Architects are in much scarcer supply than your average (or even above average) developer. Conclusions Well, that&#39;s all the time I&#39;ve got now since the baby needs her shower. Part 1 has really focused on what MDA is, what it does, and who is doing it, but in Part 2 we&#39;ll take a look at some of the things you might want to take a look at if you (or your organization) is looking into doing something with MDA." />
+<link rel="canonical" href="http://localhost:4000/2007/03/14/model-driven-architecture-part-1/" />
+<meta property="og:url" content="http://localhost:4000/2007/03/14/model-driven-architecture-part-1/" />
+<meta property="og:site_name" content="Your awesome title" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2007-03-14T21:17:22-06:00" />
+<script type="application/ld+json">
+{"headline":"Model Driven Architecture [part 1]","dateModified":"2007-03-14T21:17:22-06:00","datePublished":"2007-03-14T21:17:22-06:00","url":"http://localhost:4000/2007/03/14/model-driven-architecture-part-1/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2007/03/14/model-driven-architecture-part-1/"},"author":{"@type":"Person","name":"Ben"},"description":"Model Driven Architecture (MDA) is one of many buzzwords you&#39;ll hear in software development circles. It&#39;s actually more than one word, but nobody ever says buzzphrase, we&#39;re much more excited by buzzwords. This article is by no means meant to be a comprehensive resource, it simply represents my attempt to wrap my head around the concept. Model driven architecture is an attempt to focus information systems on business problems rather than on the technology itself. The idea is that by defining our data and our processes in a certain way, that applications can be written by computers instead of programmers. The models we are talking about here are significantly more complex than a class diagram or a sequence diagram, but at heart are really providing some of the same information. You can define the types of data your application must represent and you can define how different entities in your system should interact. Then if you define everything properly, a super special computer program can actually generate a functioning application for you. The main standards behind MDA are mostly developed by the Object Management Group (OMG) which they seem to produce at an astonishing rate (see this list if you want to be impressed). In reality, these computer generated applications are probably better used as a starting point rather than a polished final product, but a good deal of the time investment in creating a new application can be done for you. Principles There are a few principles that underpin the model driven architecture. From an IBM article on the subject: Models expressed in a well-defined notation are a cornerstone to understanding systems for enterprise-scale solutions. The building of systems can be organized around a set of models by imposing a series of transformations between models, organized into an architectural framework of layers and transformations. A formal underpinning for describing models in a set of metamodels facilitates meaningful integration and transformation among models, and is the basis for automation through tools. Acceptance and broad adoption of this model-based approach requires industry standards to provide openness to consumers, and foster competition among vendors. If that made any sense, then good on you. Here&#39;s the benrobb version. Defining your data makes it easier to understand, especially when there&#39;s lots of it. Our really cool MDA tool lets you turn your model into different types of applications in different languages. This will get even cooler if we can get lots of people to do it. Value Proposition The main value I see is that it allows you to seperate the design from the architecture, the business from the technology, or in the words of CARE Technologies (OptimalJ creator), the &quot;what&quot; from the &quot;how.&quot; Compuware (OlivaNovA creator) lays out these values: accelerate productivity—cut development time by 40 percent or more enhance maintainability—simplify maintenance and refactoring tasks, reducing time and cost increase flexibility—respond rapidly to business and technology change ensure quality—promote and enforce best practices and industry-proven code standards streamline integration—leverage and optimize existing technology investments synchronize requirements with code—trace business requirements to application code implementation We all know that technology changes faster than most business processes, and MDA provides a way to allow you to keep your business processes, but also keep up to date on your technology. Vendors OMG maintains a list of vendors of MDA products. Of the vendors on this list, I&#39;ve actually heard of a few: CARE Technologies - OlivaNOVA The Programming Machine Compuware - OptimalJ IBM - Rational TenFold - BusinessTransformation &amp; TechnologyTransfer Criticisms These are simply coming from Wikipedia, but there are a few that I think are important to mention here. Vendor Lock-in: Although the idea behind MDA is to free you from the worry of technology and code, using it does lock you into a specific vendor, because at this point in time, none of them are interoperable. Incomplete standards: some of the technical standards involved have yet to be implemented in standard way, and some have not even been defined yet. Expertise scarcity: Modellers/MDA Architects are in much scarcer supply than your average (or even above average) developer. Conclusions Well, that&#39;s all the time I&#39;ve got now since the baby needs her shower. Part 1 has really focused on what MDA is, what it does, and who is doing it, but in Part 2 we&#39;ll take a look at some of the things you might want to take a look at if you (or your organization) is looking into doing something with MDA.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Your awesome title</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about-me.html">About Me</a><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Model Driven Architecture [part 1]</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2007-03-14T21:17:22-06:00" itemprop="datePublished">Mar 14, 2007
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Ben</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Model Driven Architecture (MDA) is one of many buzzwords you'll hear in software development circles.  It's actually more than one word, but nobody ever says buzzphrase, we're much more excited by buzzwords.  This article is by no means meant to be a comprehensive resource, it simply represents my attempt to wrap my head around the concept.</p>
+<p>Model driven architecture is an attempt to focus information systems on business problems rather than on the technology itself.  The idea is that by defining our data and our processes in a certain way, that applications can be written by computers instead of programmers.</p>
+<p>The models we are talking about here are significantly more complex than a class diagram or a sequence diagram, but at heart are really providing some of the same information.  You can define the types of data your application must represent and you can define how different entities in your system should interact.  Then if you define everything properly, a super special computer program can actually generate a functioning application for you.</p>
+<p>The main standards behind MDA are mostly developed by the Object Management Group (OMG) which they seem to produce at an astonishing rate (see <a href="http://www.omg.org/gettingstarted/overview.htm" title="specs">this list</a> if you want to be impressed).  In reality, these computer generated applications are probably better used as a starting point rather than a polished final product, but a good deal of the time investment in creating a new application can be done for you.</p>
+<p><strong>Principles</strong><br />
+There are a few principles that underpin the model driven architecture.  From <a href="http://www-128.ibm.com/developerworks/rational/library/3100.html" title="Rational">an IBM article</a> on the subject:</p>
+<blockquote>
+<ul>
+<li>Models expressed in a well-defined notation are a cornerstone to understanding systems for enterprise-scale solutions.</li>
+<li>The building of systems can be organized around a set of models by imposing a series of transformations between models, organized into an architectural framework of layers and transformations.</li>
+<li>A formal underpinning for describing models in a set of metamodels facilitates meaningful integration and transformation among models, and is the basis for automation through tools.</li>
+<li>Acceptance and broad adoption of this model-based approach requires industry standards to provide openness to consumers, and foster competition among vendors.</li>
+</ul>
+</blockquote>
+<p>If that made any sense, then good on you.  Here's the benrobb version.</p>
+<blockquote>
+<ul>
+<li>Defining your data makes it easier to understand, especially when there's lots of it.</li>
+<li>Our really cool MDA tool lets you turn your model into different types of applications in different languages.</li>
+<li>This will get even cooler if we can get lots of people to do it.</li>
+</ul>
+</blockquote>
+<p><strong>Value Proposition</strong><br />
+The main value I see is that it allows you to seperate the design from the architecture, the business from the technology, or in the words of CARE Technologies (OptimalJ creator), the "what" from the "how."</p>
+<p>Compuware (OlivaNovA creator) lays out <a href="http://www.compuware.com/products/optimalj/1811_ENG_HTML.htm">these values</a>:</p>
+<blockquote>
+<ul>
+<li>accelerate productivity—cut development time by 40 percent or more</li>
+<li>enhance maintainability—simplify maintenance and refactoring tasks, reducing time and cost</li>
+<li>increase flexibility—respond rapidly to business and technology change</li>
+<li>ensure quality—promote and enforce best practices and industry-proven code standards</li>
+<li>streamline integration—leverage and optimize existing technology investments</li>
+<li>synchronize requirements with code—trace business requirements to application code implementation</li>
+</ul>
+</blockquote>
+<p>We all know that technology changes faster than most business processes, and MDA provides a way to allow you to keep your business processes, but also keep up to date on your technology.</p>
+<p><strong>Vendors</strong><br />
+OMG maintains a list of vendors of MDA products.  Of the vendors on this list, I've actually heard of a few:</p>
+<ul>
+<li>CARE Technologies - Oliva<strong>NOVA</strong> The Programming Machine</li>
+<li>Compuware - OptimalJ</li>
+<li>IBM - Rational</li>
+<li>TenFold - BusinessTransformation &amp; TechnologyTransfer</li>
+</ul>
+<p><strong>Criticisms</strong><br />
+These are simply coming from <a href="http://en.wikipedia.org/wiki/Model-driven_architecture" title="model driven architecture">Wikipedia</a>, but there are a few that I think are important to mention here.</p>
+<p>Vendor Lock-in: Although the idea behind MDA is to free you from the worry of technology and code, using it does lock you into a specific vendor, because at this point in time, none of them are interoperable.</p>
+<p>Incomplete standards:  some of the technical standards involved have yet to be implemented in standard way, and some have not even been defined yet.</p>
+<p>Expertise scarcity: Modellers/MDA Architects are in much scarcer supply than your average (or even above average) developer.</p>
+<p><strong>Conclusions</strong><br />
+Well, that's all the time I've got now since the baby needs her shower.  Part 1 has really focused on what MDA is, what it does, and who is doing it, but in Part 2 we'll take a look at some of the things you might want to take a look at if you (or your organization) is looking into doing something with MDA.</p>
+
+  </div><a class="u-url" href="/2007/03/14/model-driven-architecture-part-1/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Your awesome title</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Your awesome title</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/jekyll"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">jekyll</span></a></li><li><a href="https://www.twitter.com/jekyllrb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">jekyllrb</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

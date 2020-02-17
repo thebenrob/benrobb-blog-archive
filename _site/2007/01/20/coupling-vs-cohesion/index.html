@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Coupling vs. Cohesion | Your awesome title</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Coupling vs. Cohesion" />
+<meta name="author" content="Ben" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Coupling &amp; Cohesion are two terms often used in object-oriented software development. They sound rather similar, but have very different meetings. Coupling refers to one components unnecessary dependence on another components implementation. Cohesion refers to multiple components linked in logical and smart ways. Jeremy Leishman has shed a little more light on the topic. Coupling is the degree to which modules within a program rely on each other. If the modules interact through a stable interface without having to worry about the other’s particular implementation, they are said to be loosely coupled. This is good. Cohesion refers to how well each individual module does its job. It measures how focused the responsibilities of each class are. In good object-oriented programming, responsibilities can be specifically assigned in ways that increase reuse and code management capabilities. Modules implemented this way are said to be highly cohesive. This is also good. An example might help to clarify things a bit more. Let’s say we had an iPod object and a Song object. If the two were highly coupled, the Song class might look something like this (Ruby style): class Song def do(action) if action == 1 code to play song… elsif action == 2 code to pause elsif action == 3 code to skip endif end end Any programmer that wants the iPod object (or the WinAmp object, or any other object) to interface with the Song object is now dependent on the special meaning of 1, 2, &amp; 3 to use the Song object correctly. The iPod object and the Song object are highly coupled. Remember that highly coupled = bad. Now consider another implementation of the iPod and Song objects. Highly cohesive objects talk to each other semantically. In other words, they tell each other what they want the other one to do. The more descriptive your methods are, the better they are. class Song def new(path_to_song) #code to get the song from the filesystem end def self.play #code to play song end def self.pause code to pause song end end This would allow the iPod object to call currentSong = Song.new(“/home/user/Music/1812_Overture.mp3”) currentSong.play currentSong.pause Now the Song object is said to be highly cohesive because it’s responsibilities are very focused and other objects that wish to interact with it can do so in a uniform way regardless of how the Song object is implemented on the backend. Other objects don’t need to know how the Song object works, they just know that it does and can talk to it in an intelligent way. Remember that highly cohesive = good." />
+<meta property="og:description" content="Coupling &amp; Cohesion are two terms often used in object-oriented software development. They sound rather similar, but have very different meetings. Coupling refers to one components unnecessary dependence on another components implementation. Cohesion refers to multiple components linked in logical and smart ways. Jeremy Leishman has shed a little more light on the topic. Coupling is the degree to which modules within a program rely on each other. If the modules interact through a stable interface without having to worry about the other’s particular implementation, they are said to be loosely coupled. This is good. Cohesion refers to how well each individual module does its job. It measures how focused the responsibilities of each class are. In good object-oriented programming, responsibilities can be specifically assigned in ways that increase reuse and code management capabilities. Modules implemented this way are said to be highly cohesive. This is also good. An example might help to clarify things a bit more. Let’s say we had an iPod object and a Song object. If the two were highly coupled, the Song class might look something like this (Ruby style): class Song def do(action) if action == 1 code to play song… elsif action == 2 code to pause elsif action == 3 code to skip endif end end Any programmer that wants the iPod object (or the WinAmp object, or any other object) to interface with the Song object is now dependent on the special meaning of 1, 2, &amp; 3 to use the Song object correctly. The iPod object and the Song object are highly coupled. Remember that highly coupled = bad. Now consider another implementation of the iPod and Song objects. Highly cohesive objects talk to each other semantically. In other words, they tell each other what they want the other one to do. The more descriptive your methods are, the better they are. class Song def new(path_to_song) #code to get the song from the filesystem end def self.play #code to play song end def self.pause code to pause song end end This would allow the iPod object to call currentSong = Song.new(“/home/user/Music/1812_Overture.mp3”) currentSong.play currentSong.pause Now the Song object is said to be highly cohesive because it’s responsibilities are very focused and other objects that wish to interact with it can do so in a uniform way regardless of how the Song object is implemented on the backend. Other objects don’t need to know how the Song object works, they just know that it does and can talk to it in an intelligent way. Remember that highly cohesive = good." />
+<link rel="canonical" href="http://localhost:4000/2007/01/20/coupling-vs-cohesion/" />
+<meta property="og:url" content="http://localhost:4000/2007/01/20/coupling-vs-cohesion/" />
+<meta property="og:site_name" content="Your awesome title" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2007-01-20T11:38:24-07:00" />
+<script type="application/ld+json">
+{"headline":"Coupling vs. Cohesion","dateModified":"2007-01-20T11:38:24-07:00","datePublished":"2007-01-20T11:38:24-07:00","url":"http://localhost:4000/2007/01/20/coupling-vs-cohesion/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2007/01/20/coupling-vs-cohesion/"},"author":{"@type":"Person","name":"Ben"},"description":"Coupling &amp; Cohesion are two terms often used in object-oriented software development. They sound rather similar, but have very different meetings. Coupling refers to one components unnecessary dependence on another components implementation. Cohesion refers to multiple components linked in logical and smart ways. Jeremy Leishman has shed a little more light on the topic. Coupling is the degree to which modules within a program rely on each other. If the modules interact through a stable interface without having to worry about the other’s particular implementation, they are said to be loosely coupled. This is good. Cohesion refers to how well each individual module does its job. It measures how focused the responsibilities of each class are. In good object-oriented programming, responsibilities can be specifically assigned in ways that increase reuse and code management capabilities. Modules implemented this way are said to be highly cohesive. This is also good. An example might help to clarify things a bit more. Let’s say we had an iPod object and a Song object. If the two were highly coupled, the Song class might look something like this (Ruby style): class Song def do(action) if action == 1 code to play song… elsif action == 2 code to pause elsif action == 3 code to skip endif end end Any programmer that wants the iPod object (or the WinAmp object, or any other object) to interface with the Song object is now dependent on the special meaning of 1, 2, &amp; 3 to use the Song object correctly. The iPod object and the Song object are highly coupled. Remember that highly coupled = bad. Now consider another implementation of the iPod and Song objects. Highly cohesive objects talk to each other semantically. In other words, they tell each other what they want the other one to do. The more descriptive your methods are, the better they are. class Song def new(path_to_song) #code to get the song from the filesystem end def self.play #code to play song end def self.pause code to pause song end end This would allow the iPod object to call currentSong = Song.new(“/home/user/Music/1812_Overture.mp3”) currentSong.play currentSong.pause Now the Song object is said to be highly cohesive because it’s responsibilities are very focused and other objects that wish to interact with it can do so in a uniform way regardless of how the Song object is implemented on the backend. Other objects don’t need to know how the Song object works, they just know that it does and can talk to it in an intelligent way. Remember that highly cohesive = good.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Your awesome title</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about-me.html">About Me</a><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Coupling vs. Cohesion</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2007-01-20T11:38:24-07:00" itemprop="datePublished">Jan 20, 2007
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Ben</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Coupling &amp; Cohesion are two terms often used in object-oriented software development. They sound rather similar, but have very different meetings.</p>
+
+<p>Coupling refers to one components unnecessary dependence on another components implementation. Cohesion refers to multiple components linked in logical and smart ways.</p>
+
+<p>Jeremy Leishman has <a href="http://jeremyl-isys532.blogspot.com/2007/01/coupling-versus-cohesion.html" title="coupling vs cohesion">shed a little more light on the topic</a>. Coupling is the degree to which modules within a program rely on each other. If the modules interact through a stable interface without having to worry about the other’s particular implementation, they are said to be loosely coupled. This is good.</p>
+
+<p>Cohesion refers to how well each individual module does its job. It measures how focused the responsibilities of each class are. In good object-oriented programming, responsibilities can be specifically assigned in ways that increase reuse and code management capabilities. Modules implemented this way are said to be highly cohesive. This is also good.</p>
+
+<p>An example might help to clarify things a bit more. Let’s say we had an iPod object and a Song object. If the two were highly coupled, the Song class might look something like this (Ruby style):</p>
+
+<p>class Song
+def do(action)
+if action == 1</p>
+<h1 id="code-to-play-song">code to play song…</h1>
+<p>elsif action == 2</p>
+<h1 id="code-to-pause">code to pause</h1>
+<p>elsif action == 3</p>
+<h1 id="code-to-skip">code to skip</h1>
+<p>endif
+end
+end</p>
+
+<p>Any programmer that wants the iPod object (or the WinAmp object, or any other object) to interface with the Song object is now dependent on the special meaning of 1, 2, &amp; 3 to use the Song object correctly. The iPod object and the Song object are highly coupled. Remember that highly coupled = bad.</p>
+
+<p>Now consider another implementation of the iPod and Song objects. Highly cohesive objects talk to each other semantically. In other words, they tell each other what they want the other one to do. The more descriptive your methods are, the better they are.</p>
+
+<p>class Song
+def new(path_to_song)
+#code to get the song from the filesystem
+end</p>
+
+<p>def self.play
+#code to play song
+end</p>
+
+<p>def self.pause</p>
+<h1 id="code-to-pause-song">code to pause song</h1>
+<p>end
+end</p>
+
+<p>This would allow the iPod object to call</p>
+
+<p>currentSong = Song.new(“/home/user/Music/1812_Overture.mp3”)
+currentSong.play
+currentSong.pause</p>
+
+<p>Now the Song object is said to be highly cohesive because it’s responsibilities are very focused and other objects that wish to interact with it can do so in a uniform way regardless of how the Song object is implemented on the backend. Other objects don’t need to know how the Song object works, they just know that it does and can talk to it in an intelligent way. Remember that highly cohesive = good.</p>
+
+  </div><a class="u-url" href="/2007/01/20/coupling-vs-cohesion/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Your awesome title</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Your awesome title</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/jekyll"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">jekyll</span></a></li><li><a href="https://www.twitter.com/jekyllrb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">jekyllrb</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

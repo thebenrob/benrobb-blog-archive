@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Flashed my Bios with AsusUpdate…Ooops! | Your awesome title</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Flashed my Bios with AsusUpdate…Ooops!" />
+<meta name="author" content="Ben" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="So, after deliberating and waffling back and forth, I’ve decided to reinstall Windows 2003 Server Enterprise on my server. Only a week ago I backed everything up, wiped it clean and did a fresh install of Ubuntu64 the Edgy Eft edition, but there were a few things that didn’t work as well as planned. I love having a shell on my server for remote access, but the Samba server just doesn’t serve content quite as fast as the original SMB protocol that Windows uses (no I can’t back that up with tests, just feels slower). In addition, I could never get the BitTorrent client to work on Ubuntu even though one comes installed, and I very quickly began to miss my uTorrent. My recent time spent playing with VMWare Fusion and VMWare Server gave me a sudden and wonderful idea. I decided to reinstall Windows, then throw VMWare Server on and put Ubuntu Server in a virtual machine. I dug around in the old computer parts box and dug up a Linksys NIC, threw it in for good measure, and we’re ready to go. The plan is to have one NIC dedicated to the Ubuntu VM. I thought about using Virtual PC, but I’ve heard that it’s a little problematic with Linux distros, so I figured I’d stick with what I’ve used in the past. That’s where the thought process ended. I backed everything up again (a lengthy process, we’re talking over 200 gigs of data) and then reinstalled Windows. I’m using an Asus A8N5X Motherboard and an AMD Athlon 64 3200+ in this particular server. I swapped the ram in the desktop (don’t need a gig in there anymore since I never play games) to give my server 1 gig of ram as well. Windows installed just fine, I threw in my Asus Drivers CD and installed all the important pieces there as well, and figured I might as well flash my BIOS while I was at it. As it turns out that was a mistake. The update utility looks fairly nice and allows you to flash your BIOS without using boot disks, an attractive proposition for someone who hasn’t had a 3.5” floppy drive for many years. The program itself began behaving strangely (this should have been a warning), but I persisted. Eventually I navigated my way through the jungle of poor software design and clicked the button that said “Flash.” After completing this step, the computer told me it had to reboot. I watched the Asus logo come up and then my stomach sank when a little message popped up that said DISK BOOT FAILURE, INSERT SYSTEM DISK AND PRESS ENTER My stomach sank. After I recovered from the initial shock, I restarted and entered the newly flashed BIOS. I disabled everything relating to 3.5” floppies which didn’t really make sense since I don’t have a floppy. If it can tell what kind of hard drives and CD drives I have, it’s a logical extrapolation that it could tell there was no disk drive. Anyway, I set the order of boot devices and restarted. I was again greeted with the same friendly error. I had a heart-attack for awhile, booted into the recovery console a few times to try running fixboot and fixmbr but neither of those seemed to work. I had just finished lamenting to my wife when I had one final thought. “Wait a second, there are two hard drives in that box.” Sure enough, I went back into the BIOS and found a setting I had missed the first time around. My non-Windows hard drive was now set as the #1 drive, and since there was no OS on it, there was no boot. Changing the order of the drives cleared everything up and I was good to go. So if at first you don’t succeed, talk to your wife and everything will clear itself up." />
+<meta property="og:description" content="So, after deliberating and waffling back and forth, I’ve decided to reinstall Windows 2003 Server Enterprise on my server. Only a week ago I backed everything up, wiped it clean and did a fresh install of Ubuntu64 the Edgy Eft edition, but there were a few things that didn’t work as well as planned. I love having a shell on my server for remote access, but the Samba server just doesn’t serve content quite as fast as the original SMB protocol that Windows uses (no I can’t back that up with tests, just feels slower). In addition, I could never get the BitTorrent client to work on Ubuntu even though one comes installed, and I very quickly began to miss my uTorrent. My recent time spent playing with VMWare Fusion and VMWare Server gave me a sudden and wonderful idea. I decided to reinstall Windows, then throw VMWare Server on and put Ubuntu Server in a virtual machine. I dug around in the old computer parts box and dug up a Linksys NIC, threw it in for good measure, and we’re ready to go. The plan is to have one NIC dedicated to the Ubuntu VM. I thought about using Virtual PC, but I’ve heard that it’s a little problematic with Linux distros, so I figured I’d stick with what I’ve used in the past. That’s where the thought process ended. I backed everything up again (a lengthy process, we’re talking over 200 gigs of data) and then reinstalled Windows. I’m using an Asus A8N5X Motherboard and an AMD Athlon 64 3200+ in this particular server. I swapped the ram in the desktop (don’t need a gig in there anymore since I never play games) to give my server 1 gig of ram as well. Windows installed just fine, I threw in my Asus Drivers CD and installed all the important pieces there as well, and figured I might as well flash my BIOS while I was at it. As it turns out that was a mistake. The update utility looks fairly nice and allows you to flash your BIOS without using boot disks, an attractive proposition for someone who hasn’t had a 3.5” floppy drive for many years. The program itself began behaving strangely (this should have been a warning), but I persisted. Eventually I navigated my way through the jungle of poor software design and clicked the button that said “Flash.” After completing this step, the computer told me it had to reboot. I watched the Asus logo come up and then my stomach sank when a little message popped up that said DISK BOOT FAILURE, INSERT SYSTEM DISK AND PRESS ENTER My stomach sank. After I recovered from the initial shock, I restarted and entered the newly flashed BIOS. I disabled everything relating to 3.5” floppies which didn’t really make sense since I don’t have a floppy. If it can tell what kind of hard drives and CD drives I have, it’s a logical extrapolation that it could tell there was no disk drive. Anyway, I set the order of boot devices and restarted. I was again greeted with the same friendly error. I had a heart-attack for awhile, booted into the recovery console a few times to try running fixboot and fixmbr but neither of those seemed to work. I had just finished lamenting to my wife when I had one final thought. “Wait a second, there are two hard drives in that box.” Sure enough, I went back into the BIOS and found a setting I had missed the first time around. My non-Windows hard drive was now set as the #1 drive, and since there was no OS on it, there was no boot. Changing the order of the drives cleared everything up and I was good to go. So if at first you don’t succeed, talk to your wife and everything will clear itself up." />
+<link rel="canonical" href="http://localhost:4000/2007/01/19/flashed-my-bios-with-asusupdateooops/" />
+<meta property="og:url" content="http://localhost:4000/2007/01/19/flashed-my-bios-with-asusupdateooops/" />
+<meta property="og:site_name" content="Your awesome title" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2007-01-19T11:35:49-07:00" />
+<script type="application/ld+json">
+{"headline":"Flashed my Bios with AsusUpdate…Ooops!","dateModified":"2007-01-19T11:35:49-07:00","datePublished":"2007-01-19T11:35:49-07:00","url":"http://localhost:4000/2007/01/19/flashed-my-bios-with-asusupdateooops/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2007/01/19/flashed-my-bios-with-asusupdateooops/"},"author":{"@type":"Person","name":"Ben"},"description":"So, after deliberating and waffling back and forth, I’ve decided to reinstall Windows 2003 Server Enterprise on my server. Only a week ago I backed everything up, wiped it clean and did a fresh install of Ubuntu64 the Edgy Eft edition, but there were a few things that didn’t work as well as planned. I love having a shell on my server for remote access, but the Samba server just doesn’t serve content quite as fast as the original SMB protocol that Windows uses (no I can’t back that up with tests, just feels slower). In addition, I could never get the BitTorrent client to work on Ubuntu even though one comes installed, and I very quickly began to miss my uTorrent. My recent time spent playing with VMWare Fusion and VMWare Server gave me a sudden and wonderful idea. I decided to reinstall Windows, then throw VMWare Server on and put Ubuntu Server in a virtual machine. I dug around in the old computer parts box and dug up a Linksys NIC, threw it in for good measure, and we’re ready to go. The plan is to have one NIC dedicated to the Ubuntu VM. I thought about using Virtual PC, but I’ve heard that it’s a little problematic with Linux distros, so I figured I’d stick with what I’ve used in the past. That’s where the thought process ended. I backed everything up again (a lengthy process, we’re talking over 200 gigs of data) and then reinstalled Windows. I’m using an Asus A8N5X Motherboard and an AMD Athlon 64 3200+ in this particular server. I swapped the ram in the desktop (don’t need a gig in there anymore since I never play games) to give my server 1 gig of ram as well. Windows installed just fine, I threw in my Asus Drivers CD and installed all the important pieces there as well, and figured I might as well flash my BIOS while I was at it. As it turns out that was a mistake. The update utility looks fairly nice and allows you to flash your BIOS without using boot disks, an attractive proposition for someone who hasn’t had a 3.5” floppy drive for many years. The program itself began behaving strangely (this should have been a warning), but I persisted. Eventually I navigated my way through the jungle of poor software design and clicked the button that said “Flash.” After completing this step, the computer told me it had to reboot. I watched the Asus logo come up and then my stomach sank when a little message popped up that said DISK BOOT FAILURE, INSERT SYSTEM DISK AND PRESS ENTER My stomach sank. After I recovered from the initial shock, I restarted and entered the newly flashed BIOS. I disabled everything relating to 3.5” floppies which didn’t really make sense since I don’t have a floppy. If it can tell what kind of hard drives and CD drives I have, it’s a logical extrapolation that it could tell there was no disk drive. Anyway, I set the order of boot devices and restarted. I was again greeted with the same friendly error. I had a heart-attack for awhile, booted into the recovery console a few times to try running fixboot and fixmbr but neither of those seemed to work. I had just finished lamenting to my wife when I had one final thought. “Wait a second, there are two hard drives in that box.” Sure enough, I went back into the BIOS and found a setting I had missed the first time around. My non-Windows hard drive was now set as the #1 drive, and since there was no OS on it, there was no boot. Changing the order of the drives cleared everything up and I was good to go. So if at first you don’t succeed, talk to your wife and everything will clear itself up.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Your awesome title</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about-me.html">About Me</a><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Flashed my Bios with AsusUpdate&amp;#8230;Ooops!</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2007-01-19T11:35:49-07:00" itemprop="datePublished">Jan 19, 2007
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Ben</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>So, after deliberating and waffling back and forth, I’ve decided to reinstall Windows 2003 Server Enterprise on my server. Only a week ago I backed everything up, wiped it clean and did a fresh install of Ubuntu64 the Edgy Eft edition, but there were a few things that didn’t work as well as planned.</p>
+
+<p>I love having a shell on my server for remote access, but the Samba server just doesn’t serve content quite as fast as the original SMB protocol that Windows uses (no I can’t back that up with tests, just feels slower). In addition, I could never get the BitTorrent client to work on Ubuntu even though one comes installed, and I very quickly began to miss my uTorrent.</p>
+
+<p>My recent time spent playing with VMWare Fusion and VMWare Server gave me a sudden and wonderful idea. I decided to reinstall Windows, then throw VMWare Server on and put Ubuntu Server in a virtual machine. I dug around in the old computer parts box and dug up a Linksys NIC, threw it in for good measure, and we’re ready to go. The plan is to have one NIC dedicated to the Ubuntu VM. I thought about using Virtual PC, but I’ve heard that it’s a little problematic with Linux distros, so I figured I’d stick with what I’ve used in the past.</p>
+
+<p>That’s where the thought process ended. I backed everything up again (a lengthy process, we’re talking over 200 gigs of data) and then reinstalled Windows. I’m using an Asus A8N5X Motherboard and an AMD Athlon 64 3200+ in this particular server. I swapped the ram in the desktop (don’t need a gig in there anymore since I never play games) to give my server 1 gig of ram as well.</p>
+
+<p>Windows installed just fine, I threw in my Asus Drivers CD and installed all the important pieces there as well, and figured I might as well flash my BIOS while I was at it. As it turns out that was a mistake. The update utility looks fairly nice and allows you to flash your BIOS without using boot disks, an attractive proposition for someone who hasn’t had a 3.5” floppy drive for many years. The program itself began behaving strangely (this should have been a warning), but I persisted. Eventually I navigated my way through the jungle of poor software design and clicked the button that said “Flash.”</p>
+
+<p>After completing this step, the computer told me it had to reboot. I watched the Asus logo come up and then my stomach sank when a little message popped up that said</p>
+
+<p>DISK BOOT FAILURE, INSERT SYSTEM DISK AND PRESS ENTER</p>
+
+<p>My stomach sank. After I recovered from the initial shock, I restarted and entered the newly flashed BIOS. I disabled everything relating to 3.5” floppies which didn’t really make sense since I don’t have a floppy. If it can tell what kind of hard drives and CD drives I have, it’s a logical extrapolation that it could tell there was no disk drive. Anyway, I set the order of boot devices and restarted.</p>
+
+<p>I was again greeted with the same friendly error. I had a heart-attack for awhile, booted into the recovery console a few times to try running</p>
+
+<p>fixboot</p>
+
+<p>and</p>
+
+<p>fixmbr</p>
+
+<p>but neither of those seemed to work. I had just finished lamenting to my wife when I had one final thought. “Wait a second, there are two hard drives in that box.” Sure enough, I went back into the BIOS and found a setting I had missed the first time around. My non-Windows hard drive was now set as the #1 drive, and since there was no OS on it, there was no boot. Changing the order of the drives cleared everything up and I was good to go.</p>
+
+<p>So if at first you don’t succeed, talk to your wife and everything will clear itself up.</p>
+
+  </div><a class="u-url" href="/2007/01/19/flashed-my-bios-with-asusupdateooops/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Your awesome title</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Your awesome title</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/jekyll"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">jekyll</span></a></li><li><a href="https://www.twitter.com/jekyllrb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">jekyllrb</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

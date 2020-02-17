@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Enterprise Java Tools | Your awesome title</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Enterprise Java Tools" />
+<meta name="author" content="Ben" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The Java Language presents many advantages for the enterprise-types.  My personal favorite language really shines on the web, but for the full architecture and support desired in enterprises, Java has a lot to offer (not the topic of this post).  Right now we’re going to look at 2 Java tools that have become commonplace in enterprise development: log4j and JMS. log4j log4j (non-capitalized on purpose) is an open-source project developed under the Apache Jakarta banner.  It was originally developed by Ceki Gülcü. It is built to be the best Java logger around, and the industry agrees that it is.  It’s used for debugging and logging and can provide detailed context for application failures. It is built as a package that you can drop into your application and start making calls to the logger object.  log4j may provide the best or only solution for debugging (this is often case in distributed applications). log4j enables logging at run-time without modifying the application’s compiled binary.  This means that you can enable debugging without suffering the heavy performance loss that you might expect by bloating your binaries with extra code. Perhaps one of the most useful features in log4j is the idea of hierarchy and inheritance.  As you make calls to the logger object and log different kinds of events, you can have different outputs that listen to the logs and pass them on when certain criteria are met.  It’s sort of a subscriber provider model for things.  Potential subscribers would be loggers outputting information to the console, files, databses, SMTP servers, GUI components, etc.  These subscribers are called appenders. This means that you could potentially have everything logged to a standard file, important things put into a different file, database, etc., and have critical errors emailed to someone that can fix them.  The only thing you’d need in your application code would be the one call to the logger object and everything else happens as the different loggers subscribe to the different events.  All the subscriptions to events are handled by external configuration files, so you don’t have to modify your application code in order to change the behavior of the loggers. JMS The Java Messaging Service is another logging solution.  My research on this topic introduced the phrase “asynchronous logging” for the first time although it sounds like log4j works on the same principle.  Reading about JMS also used the publisher/subscriber metaphor which I unfortunately already used, but these two facts should illustrate some of the similarities. JMS actually supports to different types of logging.  The queuing model has a producer and only one consumer.  They are independent, so the consumer does not have to be running when the producer produces, and the producer does not have to be running when the consumer consumer.  This is a higher level of abstraction than log4j uses (according to my understanding). The Publish/Subscribe model published messages in “topics.”  Zero or more subscribers can subscribe to a particular topic.  In this model the subscribers and the publisher are not even aware of the other’s existence. Some enterprising individual has even built an Appender for log4j that plugs the JMS into log4j.  O’Reilly has also published a book on the JMS which in my book means it’s significantly more complex.  From my readings, log4j is also further abstracted out of the application than JMS.  It sounds like in order to change what your JMS publisher is doing, you’ll have to change code in your application and recompile." />
+<meta property="og:description" content="The Java Language presents many advantages for the enterprise-types.  My personal favorite language really shines on the web, but for the full architecture and support desired in enterprises, Java has a lot to offer (not the topic of this post).  Right now we’re going to look at 2 Java tools that have become commonplace in enterprise development: log4j and JMS. log4j log4j (non-capitalized on purpose) is an open-source project developed under the Apache Jakarta banner.  It was originally developed by Ceki Gülcü. It is built to be the best Java logger around, and the industry agrees that it is.  It’s used for debugging and logging and can provide detailed context for application failures. It is built as a package that you can drop into your application and start making calls to the logger object.  log4j may provide the best or only solution for debugging (this is often case in distributed applications). log4j enables logging at run-time without modifying the application’s compiled binary.  This means that you can enable debugging without suffering the heavy performance loss that you might expect by bloating your binaries with extra code. Perhaps one of the most useful features in log4j is the idea of hierarchy and inheritance.  As you make calls to the logger object and log different kinds of events, you can have different outputs that listen to the logs and pass them on when certain criteria are met.  It’s sort of a subscriber provider model for things.  Potential subscribers would be loggers outputting information to the console, files, databses, SMTP servers, GUI components, etc.  These subscribers are called appenders. This means that you could potentially have everything logged to a standard file, important things put into a different file, database, etc., and have critical errors emailed to someone that can fix them.  The only thing you’d need in your application code would be the one call to the logger object and everything else happens as the different loggers subscribe to the different events.  All the subscriptions to events are handled by external configuration files, so you don’t have to modify your application code in order to change the behavior of the loggers. JMS The Java Messaging Service is another logging solution.  My research on this topic introduced the phrase “asynchronous logging” for the first time although it sounds like log4j works on the same principle.  Reading about JMS also used the publisher/subscriber metaphor which I unfortunately already used, but these two facts should illustrate some of the similarities. JMS actually supports to different types of logging.  The queuing model has a producer and only one consumer.  They are independent, so the consumer does not have to be running when the producer produces, and the producer does not have to be running when the consumer consumer.  This is a higher level of abstraction than log4j uses (according to my understanding). The Publish/Subscribe model published messages in “topics.”  Zero or more subscribers can subscribe to a particular topic.  In this model the subscribers and the publisher are not even aware of the other’s existence. Some enterprising individual has even built an Appender for log4j that plugs the JMS into log4j.  O’Reilly has also published a book on the JMS which in my book means it’s significantly more complex.  From my readings, log4j is also further abstracted out of the application than JMS.  It sounds like in order to change what your JMS publisher is doing, you’ll have to change code in your application and recompile." />
+<link rel="canonical" href="http://localhost:4000/2007/04/03/enterprise-java-tools/" />
+<meta property="og:url" content="http://localhost:4000/2007/04/03/enterprise-java-tools/" />
+<meta property="og:site_name" content="Your awesome title" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2007-04-03T20:42:18-06:00" />
+<script type="application/ld+json">
+{"headline":"Enterprise Java Tools","dateModified":"2007-04-03T20:42:18-06:00","datePublished":"2007-04-03T20:42:18-06:00","url":"http://localhost:4000/2007/04/03/enterprise-java-tools/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2007/04/03/enterprise-java-tools/"},"author":{"@type":"Person","name":"Ben"},"description":"The Java Language presents many advantages for the enterprise-types.  My personal favorite language really shines on the web, but for the full architecture and support desired in enterprises, Java has a lot to offer (not the topic of this post).  Right now we’re going to look at 2 Java tools that have become commonplace in enterprise development: log4j and JMS. log4j log4j (non-capitalized on purpose) is an open-source project developed under the Apache Jakarta banner.  It was originally developed by Ceki Gülcü. It is built to be the best Java logger around, and the industry agrees that it is.  It’s used for debugging and logging and can provide detailed context for application failures. It is built as a package that you can drop into your application and start making calls to the logger object.  log4j may provide the best or only solution for debugging (this is often case in distributed applications). log4j enables logging at run-time without modifying the application’s compiled binary.  This means that you can enable debugging without suffering the heavy performance loss that you might expect by bloating your binaries with extra code. Perhaps one of the most useful features in log4j is the idea of hierarchy and inheritance.  As you make calls to the logger object and log different kinds of events, you can have different outputs that listen to the logs and pass them on when certain criteria are met.  It’s sort of a subscriber provider model for things.  Potential subscribers would be loggers outputting information to the console, files, databses, SMTP servers, GUI components, etc.  These subscribers are called appenders. This means that you could potentially have everything logged to a standard file, important things put into a different file, database, etc., and have critical errors emailed to someone that can fix them.  The only thing you’d need in your application code would be the one call to the logger object and everything else happens as the different loggers subscribe to the different events.  All the subscriptions to events are handled by external configuration files, so you don’t have to modify your application code in order to change the behavior of the loggers. JMS The Java Messaging Service is another logging solution.  My research on this topic introduced the phrase “asynchronous logging” for the first time although it sounds like log4j works on the same principle.  Reading about JMS also used the publisher/subscriber metaphor which I unfortunately already used, but these two facts should illustrate some of the similarities. JMS actually supports to different types of logging.  The queuing model has a producer and only one consumer.  They are independent, so the consumer does not have to be running when the producer produces, and the producer does not have to be running when the consumer consumer.  This is a higher level of abstraction than log4j uses (according to my understanding). The Publish/Subscribe model published messages in “topics.”  Zero or more subscribers can subscribe to a particular topic.  In this model the subscribers and the publisher are not even aware of the other’s existence. Some enterprising individual has even built an Appender for log4j that plugs the JMS into log4j.  O’Reilly has also published a book on the JMS which in my book means it’s significantly more complex.  From my readings, log4j is also further abstracted out of the application than JMS.  It sounds like in order to change what your JMS publisher is doing, you’ll have to change code in your application and recompile.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Your awesome title</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about-me.html">About Me</a><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Enterprise Java Tools</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2007-04-03T20:42:18-06:00" itemprop="datePublished">Apr 3, 2007
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Ben</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>The Java Language presents many advantages for the enterprise-types.  My personal favorite language really shines on the web, but for the full architecture and support desired in enterprises, Java has a lot to offer (not the topic of this post).  Right now we’re going to look at 2 Java tools that have become commonplace in enterprise development: log4j and JMS.</p>
+
+<p><strong>log4j</strong>
+log4j (non-capitalized on purpose) is an open-source project developed under the Apache Jakarta banner.  It was originally developed by Ceki Gülcü. It is built to be the best Java logger around, and the industry agrees that it is.  It’s used for debugging and logging and can provide detailed context for application failures.</p>
+
+<p>It is built as a package that you can drop into your application and start making calls to the logger object.  log4j may provide the best or only solution for debugging (this is often case in distributed applications).</p>
+
+<p>log4j enables logging at run-time without modifying the application’s compiled binary.  This means that you can enable debugging without suffering the heavy performance loss that you might expect by bloating your binaries with extra code.</p>
+
+<p>Perhaps one of the most useful features in log4j is the idea of hierarchy and inheritance.  As you make calls to the logger object and log different kinds of events, you can have different outputs that listen to the logs and pass them on when certain criteria are met.  It’s sort of a subscriber provider model for things.  Potential subscribers would be loggers outputting information to the console, files, databses, SMTP servers, GUI components, etc.  These subscribers are called appenders.</p>
+
+<p>This means that you could potentially have everything logged to a standard file, important things put into a different file, database, etc., and have critical errors emailed to someone that can fix them.  The only thing you’d need in your application code would be the one call to the logger object and everything else happens as the different loggers subscribe to the different events.  All the subscriptions to events are handled by external configuration files, so you don’t have to modify your application code in order to change the behavior of the loggers.</p>
+
+<p><strong>JMS</strong>
+The Java Messaging Service is another logging solution.  My research on this topic introduced the phrase “asynchronous logging” for the first time although it sounds like log4j works on the same principle.  Reading about JMS also used the publisher/subscriber metaphor which I unfortunately already used, but these two facts should illustrate some of the similarities.</p>
+
+<p>JMS actually supports to different types of logging.  The queuing model has a producer and only one consumer.  They are independent, so the consumer does not have to be running when the producer produces, and the producer does not have to be running when the consumer consumer.  This is a higher level of abstraction than log4j uses (according to my understanding).</p>
+
+<p>The Publish/Subscribe model published messages in “topics.”  Zero or more subscribers can subscribe to a particular topic.  In this model the subscribers and the publisher are not even aware of the other’s existence.</p>
+
+<p>Some enterprising individual has even built an Appender for log4j that plugs the JMS into log4j.  O’Reilly has also published a book on the JMS which in my book means it’s significantly more complex.  From my readings, log4j is also further abstracted out of the application than JMS.  It sounds like in order to change what your JMS publisher is doing, you’ll have to change code in your application and recompile.</p>
+
+  </div><a class="u-url" href="/2007/04/03/enterprise-java-tools/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Your awesome title</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Your awesome title</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/jekyll"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">jekyll</span></a></li><li><a href="https://www.twitter.com/jekyllrb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">jekyllrb</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

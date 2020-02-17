@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Howto: Put WSDL on Rails | Your awesome title</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Howto: Put WSDL on Rails" />
+<meta name="author" content="Ben" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Why do I love Rails so much? Because there is so much to love! Who ever dreamed that creating web services could be so simple? Where other frameworks can consume them very simply, Rails defines simplicity when it comes to creating them. Consuming them is easy as well, but it’s on the creation side that Rails really stands out from the competition. So how do you do it? First off, let me say that my inexperience in web services means that I’m far from a subject matter expert. I can however follow simple instructions, and I found a beautiful set over at the SOA Ranch. This is a 3 part series, though more are supposedly coming. I hope these articles continue to be published, but I have my doubts as the most recent articles are nearly 6 months old now. The first one I found was part 3 part 2.5 in the series, and you can follow the links back to part 1 &amp; part 2 (update 1/3/2009: I’ve removed the links since they no longer point to Rails content, apologies for the inconvenience). So let’s get down to business. I’ll make the assumption that you’ve got a working Rails environment. For Mac users, the latest version of Locomotive has everything you need for creating web services. For everyone else you’ll have to make your Rails environment the old fashioned way, although you can look forward to Rubuntu soon. We’re going to create a very simple web service that accepts a string, changes it a bit and returns a string. First create yourself a new application rails WebServiceProvider Then you’ll want to open your application in your favorite Rails editor. Then we need to generate your web service. ./script/generate web_service Manipulation manipulate This will create an API file for us to define our web service’s interface. It also creates a controller for us to use, and then a test file for us to use later (we won’t get to scripted testing in this article, although we will test it manually to prove that it works). Now open up your manipulation_api.rb file in app/apis. You’ll see the following line of code that is the beginnings of our string manipulating web service. api_method :manipulate We’ll need to define parameters and data types for our method like so: api_method :manipulate, :expects =&gt; [:string], :returns =&gt; [:string] There are many data types that can be used here, but we’re keeping things easy for now. Now we’ll go look at the ManipulationController at app/controllers/manipulation_controller.rb. Because we followed the standard Rails naming conventions the mapping of the web service to the controller is already done, but if we hadn’t, this mapping can be done explicitly by adding the following to our controller. web_service_api ManipulationApi We can also give our web service a different name with the wsdl_service_name directive wsdl_service_name &#39;Manipulation&#39; Notice also that in the controller is where we define all our logic for what happens with the parameters being passed in by our web service consumer. the manipulate method has already been created for us, so we simply need to tell our method to accept a string, perform our logic, and return another string. Again we’ll keep things simple. def manipulate(terms) return &quot;Yeah! &quot; + terms + &quot;!&quot; end Now for all intents and purposes, our web service has been coded. We’ll add one more line to our controller that will generate a web front-end for the service so we can go see how it looks on the browser end. Just add the following line to your controller. web_service_scaffold :invoke Now let’s turn on the server and see how things look. Back at the terminal type ./script/server Open your browser and point it to http://localhost:3000/Manipulation/invoke. This shows us the web view of our API. Follow the manipulate link to see the auto-generated web form that will show us what our service looks like. Type your message into Param0 box and click the invoke button to see all your beautiful web service XML. Another important point for those wishing to consume your web service is that Rails is automatically generating your wsdl for you. You can see how this works by checking the routes.rb file in app/config but just know that visiting http://localhost:3000/Manipulation/service.wsdl you can see the WSDL file that others will need to use your web service. You can use something besides service.wsdl by editing your routes.rb file appropriately. Now this is obviously a simple example, but it illustrates the basic steps and important points. You probably wouldn’t have much use for a web service that adds the word “Yeah” and a few exclamation points to some user-input, but if we were doing this in the context of a real web application, you can start to imagine the possibilities available in your controller if you’ve got a dynamic database-driven application to work with. You can add other methods to your API, define the param and return types there, then define the logic in the controller in the appropriate method. Once you get the basics down, you’re on your way and the sky is the limit. Good luck developing your first piece of the Web 2.0." />
+<meta property="og:description" content="Why do I love Rails so much? Because there is so much to love! Who ever dreamed that creating web services could be so simple? Where other frameworks can consume them very simply, Rails defines simplicity when it comes to creating them. Consuming them is easy as well, but it’s on the creation side that Rails really stands out from the competition. So how do you do it? First off, let me say that my inexperience in web services means that I’m far from a subject matter expert. I can however follow simple instructions, and I found a beautiful set over at the SOA Ranch. This is a 3 part series, though more are supposedly coming. I hope these articles continue to be published, but I have my doubts as the most recent articles are nearly 6 months old now. The first one I found was part 3 part 2.5 in the series, and you can follow the links back to part 1 &amp; part 2 (update 1/3/2009: I’ve removed the links since they no longer point to Rails content, apologies for the inconvenience). So let’s get down to business. I’ll make the assumption that you’ve got a working Rails environment. For Mac users, the latest version of Locomotive has everything you need for creating web services. For everyone else you’ll have to make your Rails environment the old fashioned way, although you can look forward to Rubuntu soon. We’re going to create a very simple web service that accepts a string, changes it a bit and returns a string. First create yourself a new application rails WebServiceProvider Then you’ll want to open your application in your favorite Rails editor. Then we need to generate your web service. ./script/generate web_service Manipulation manipulate This will create an API file for us to define our web service’s interface. It also creates a controller for us to use, and then a test file for us to use later (we won’t get to scripted testing in this article, although we will test it manually to prove that it works). Now open up your manipulation_api.rb file in app/apis. You’ll see the following line of code that is the beginnings of our string manipulating web service. api_method :manipulate We’ll need to define parameters and data types for our method like so: api_method :manipulate, :expects =&gt; [:string], :returns =&gt; [:string] There are many data types that can be used here, but we’re keeping things easy for now. Now we’ll go look at the ManipulationController at app/controllers/manipulation_controller.rb. Because we followed the standard Rails naming conventions the mapping of the web service to the controller is already done, but if we hadn’t, this mapping can be done explicitly by adding the following to our controller. web_service_api ManipulationApi We can also give our web service a different name with the wsdl_service_name directive wsdl_service_name &#39;Manipulation&#39; Notice also that in the controller is where we define all our logic for what happens with the parameters being passed in by our web service consumer. the manipulate method has already been created for us, so we simply need to tell our method to accept a string, perform our logic, and return another string. Again we’ll keep things simple. def manipulate(terms) return &quot;Yeah! &quot; + terms + &quot;!&quot; end Now for all intents and purposes, our web service has been coded. We’ll add one more line to our controller that will generate a web front-end for the service so we can go see how it looks on the browser end. Just add the following line to your controller. web_service_scaffold :invoke Now let’s turn on the server and see how things look. Back at the terminal type ./script/server Open your browser and point it to http://localhost:3000/Manipulation/invoke. This shows us the web view of our API. Follow the manipulate link to see the auto-generated web form that will show us what our service looks like. Type your message into Param0 box and click the invoke button to see all your beautiful web service XML. Another important point for those wishing to consume your web service is that Rails is automatically generating your wsdl for you. You can see how this works by checking the routes.rb file in app/config but just know that visiting http://localhost:3000/Manipulation/service.wsdl you can see the WSDL file that others will need to use your web service. You can use something besides service.wsdl by editing your routes.rb file appropriately. Now this is obviously a simple example, but it illustrates the basic steps and important points. You probably wouldn’t have much use for a web service that adds the word “Yeah” and a few exclamation points to some user-input, but if we were doing this in the context of a real web application, you can start to imagine the possibilities available in your controller if you’ve got a dynamic database-driven application to work with. You can add other methods to your API, define the param and return types there, then define the logic in the controller in the appropriate method. Once you get the basics down, you’re on your way and the sky is the limit. Good luck developing your first piece of the Web 2.0." />
+<link rel="canonical" href="http://localhost:4000/2007/01/30/howto-put-wsdl-on-rails/" />
+<meta property="og:url" content="http://localhost:4000/2007/01/30/howto-put-wsdl-on-rails/" />
+<meta property="og:site_name" content="Your awesome title" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2007-01-30T23:51:39-07:00" />
+<script type="application/ld+json">
+{"headline":"Howto: Put WSDL on Rails","dateModified":"2007-01-30T23:51:39-07:00","datePublished":"2007-01-30T23:51:39-07:00","url":"http://localhost:4000/2007/01/30/howto-put-wsdl-on-rails/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2007/01/30/howto-put-wsdl-on-rails/"},"author":{"@type":"Person","name":"Ben"},"description":"Why do I love Rails so much? Because there is so much to love! Who ever dreamed that creating web services could be so simple? Where other frameworks can consume them very simply, Rails defines simplicity when it comes to creating them. Consuming them is easy as well, but it’s on the creation side that Rails really stands out from the competition. So how do you do it? First off, let me say that my inexperience in web services means that I’m far from a subject matter expert. I can however follow simple instructions, and I found a beautiful set over at the SOA Ranch. This is a 3 part series, though more are supposedly coming. I hope these articles continue to be published, but I have my doubts as the most recent articles are nearly 6 months old now. The first one I found was part 3 part 2.5 in the series, and you can follow the links back to part 1 &amp; part 2 (update 1/3/2009: I’ve removed the links since they no longer point to Rails content, apologies for the inconvenience). So let’s get down to business. I’ll make the assumption that you’ve got a working Rails environment. For Mac users, the latest version of Locomotive has everything you need for creating web services. For everyone else you’ll have to make your Rails environment the old fashioned way, although you can look forward to Rubuntu soon. We’re going to create a very simple web service that accepts a string, changes it a bit and returns a string. First create yourself a new application rails WebServiceProvider Then you’ll want to open your application in your favorite Rails editor. Then we need to generate your web service. ./script/generate web_service Manipulation manipulate This will create an API file for us to define our web service’s interface. It also creates a controller for us to use, and then a test file for us to use later (we won’t get to scripted testing in this article, although we will test it manually to prove that it works). Now open up your manipulation_api.rb file in app/apis. You’ll see the following line of code that is the beginnings of our string manipulating web service. api_method :manipulate We’ll need to define parameters and data types for our method like so: api_method :manipulate, :expects =&gt; [:string], :returns =&gt; [:string] There are many data types that can be used here, but we’re keeping things easy for now. Now we’ll go look at the ManipulationController at app/controllers/manipulation_controller.rb. Because we followed the standard Rails naming conventions the mapping of the web service to the controller is already done, but if we hadn’t, this mapping can be done explicitly by adding the following to our controller. web_service_api ManipulationApi We can also give our web service a different name with the wsdl_service_name directive wsdl_service_name &#39;Manipulation&#39; Notice also that in the controller is where we define all our logic for what happens with the parameters being passed in by our web service consumer. the manipulate method has already been created for us, so we simply need to tell our method to accept a string, perform our logic, and return another string. Again we’ll keep things simple. def manipulate(terms) return &quot;Yeah! &quot; + terms + &quot;!&quot; end Now for all intents and purposes, our web service has been coded. We’ll add one more line to our controller that will generate a web front-end for the service so we can go see how it looks on the browser end. Just add the following line to your controller. web_service_scaffold :invoke Now let’s turn on the server and see how things look. Back at the terminal type ./script/server Open your browser and point it to http://localhost:3000/Manipulation/invoke. This shows us the web view of our API. Follow the manipulate link to see the auto-generated web form that will show us what our service looks like. Type your message into Param0 box and click the invoke button to see all your beautiful web service XML. Another important point for those wishing to consume your web service is that Rails is automatically generating your wsdl for you. You can see how this works by checking the routes.rb file in app/config but just know that visiting http://localhost:3000/Manipulation/service.wsdl you can see the WSDL file that others will need to use your web service. You can use something besides service.wsdl by editing your routes.rb file appropriately. Now this is obviously a simple example, but it illustrates the basic steps and important points. You probably wouldn’t have much use for a web service that adds the word “Yeah” and a few exclamation points to some user-input, but if we were doing this in the context of a real web application, you can start to imagine the possibilities available in your controller if you’ve got a dynamic database-driven application to work with. You can add other methods to your API, define the param and return types there, then define the logic in the controller in the appropriate method. Once you get the basics down, you’re on your way and the sky is the limit. Good luck developing your first piece of the Web 2.0.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Your awesome title</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about-me.html">About Me</a><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Howto: Put WSDL on Rails</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2007-01-30T23:51:39-07:00" itemprop="datePublished">Jan 30, 2007
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Ben</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Why do I love Rails so much?  Because there is so much to love!  Who ever dreamed that creating web services could be so simple?  Where other frameworks can consume them very simply, Rails defines simplicity when it comes to creating them.  Consuming them is easy as well, but it’s on the creation side that Rails really stands out from the competition.  So how do you do it?</p>
+
+<p>First off, let me say that my inexperience in web services means that I’m far from a subject matter expert.  I can however follow simple instructions, and I found a beautiful set over at the SOA Ranch.  This is a 3 part series, though more are supposedly coming.  I hope these articles continue to be published, but I have my doubts as the most recent articles are nearly 6 months old now.  The first one I found was <span style="text-decoration: line-through;">part 3</span> part 2.5 in the series, and you can follow the links back to part 1 &amp; part 2 (update 1/3/2009: I’ve removed the links since they no longer point to Rails content, apologies for the inconvenience).</p>
+
+<p>So let’s get down to business.  I’ll make the assumption that you’ve got a <a title="how to make a working rails environment" href="https://benrobb.com/2007/02/01/howto-make-a-rails-environment-in-ubuntu/">working Rails environment</a>.  For Mac users, <a title="Locomotive" href="http://locomotive.raaum.org/">the latest version of Locomotive</a> has everything you need for creating web services.  For everyone else you’ll have to make your Rails environment the old fashioned way, although you can look forward to <a title="rubuntu" href="http://brainspl.at/articles/2006/02/16/rubuntu-is-almost-born">Rubuntu</a> soon.  We’re going to create a very simple web service that accepts a string, changes it a bit and returns a string.</p>
+
+<p>First create yourself a new application</p>
+
+<p><code>rails WebServiceProvider</code></p>
+
+<p>Then you’ll want to open your application in your favorite Rails editor.  Then we need to generate your web service.</p>
+
+<p><code>./script/generate web_service Manipulation manipulate</code></p>
+
+<p>This will create an API file for us to define our web service’s interface.  It also creates a controller for us to use, and then a test file for us to use later (we won’t get to scripted testing in this article, although we will test it manually to prove that it works).</p>
+
+<p>Now open up your manipulation_api.rb file in app/apis.  You’ll see the following line of code that is the beginnings of our string manipulating web service.</p>
+
+<p><code>api_method :manipulate</code></p>
+
+<p>We’ll need to define parameters and data types for our method like so:</p>
+
+<p><code>api_method :manipulate, :expects =&gt; [:string], :returns =&gt; [:string]</code></p>
+
+<p>There are many data types that can be used here, but we’re keeping things easy for now.  Now we’ll go look at the ManipulationController at app/controllers/manipulation_controller.rb.  Because we followed the standard Rails naming conventions the mapping of the web service to the controller is already done, but if we hadn’t, this mapping can be done explicitly by adding the following to our controller.</p>
+
+<p><code>web_service_api ManipulationApi</code></p>
+
+<p>We can also give our web service a different name with the wsdl_service_name directive</p>
+
+<p><code>wsdl_service_name 'Manipulation'</code></p>
+
+<p>Notice also that in the controller is where we define all our logic for what happens with the parameters being passed in by our web service consumer.  the manipulate method has already been created for us, so we simply need to tell our method to accept a string, perform our logic, and return another  string.</p>
+
+<p>Again we’ll keep things simple.</p>
+
+<p><code>def manipulate(terms)
+return "Yeah! " + terms + "!"
+end
+</code></p>
+
+<p>Now for all intents and purposes, our web service has been coded.  We’ll add one more line to our controller that will generate a web front-end for the service so we can go see how it looks on the browser end.  Just add the following line to your controller.</p>
+
+<p><code>web_service_scaffold :invoke</code></p>
+
+<p>Now let’s turn on the server and see how things look.  Back at the terminal type</p>
+
+<p><code>./script/server</code></p>
+
+<p>Open your browser and point it to <a title="invoke web service" href="http://localhost:3000/Manipulation/invoke">http://localhost:3000/Manipulation/invoke</a>.  This shows us the web view of our API.  Follow the manipulate link to see the auto-generated web form that will show us what our service looks like.  Type your message into Param0 box and click the invoke button to see all your beautiful web service XML.  Another important point for those wishing to consume your web service is that Rails is automatically generating your wsdl for you.  You can see how this works by checking the routes.rb file in app/config but just know that visiting <a href="http://localhost:3000/Manipulation/service.wsdl">http://localhost:3000/Manipulation/service.wsdl</a> you can see the WSDL file that others will need to use your web service.  You can use something besides service.wsdl by editing your routes.rb file appropriately.</p>
+
+<p>Now this is obviously a simple example, but it illustrates the basic steps and important points.  You probably wouldn’t have much use for a web service that adds the word “Yeah” and a few exclamation points to some user-input, but if we were doing this in the context of a real web application, you can start to imagine the possibilities available in your controller if you’ve got a dynamic database-driven application to work with.  You can add other methods to your API, define the param and return types there, then define the logic in the controller in the appropriate method.  Once you get the basics down, you’re on your way and the sky is the limit.  Good luck developing your first piece of the Web 2.0.</p>
+
+  </div><a class="u-url" href="/2007/01/30/howto-put-wsdl-on-rails/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Your awesome title</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Your awesome title</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/jekyll"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">jekyll</span></a></li><li><a href="https://www.twitter.com/jekyllrb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">jekyllrb</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
